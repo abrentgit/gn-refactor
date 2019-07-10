@@ -8,7 +8,6 @@ export class EntriesPage extends React.Component {
   render() {
     return (
       <div className="entries-div">
-        <NavBar />
         <Entries />
       </div>
     );

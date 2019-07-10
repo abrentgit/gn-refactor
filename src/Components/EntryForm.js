@@ -5,7 +5,6 @@ export class EntryForm extends React.Component {
   render() {
     return (
       <form id="entry-form">
-        <h1>Today I am grateful for...</h1>
         <div>
           <input
             type="email"
@@ -17,14 +16,12 @@ export class EntryForm extends React.Component {
           <input
             type="text"
             name="title"
-            className="title"
-            placeholder="My Grateful Journal Title"
+            className="formStyle"
+            placeholder="An Awesome Entry TItle"
             required
           />
-          <a href="#" className="save-btn">
-            Save
-          </a>
         </div>
+        <button className="formButton">Save</button>
       </form>
     );
   }

@@ -6,7 +6,6 @@ export class CreateEntryPage extends React.Component {
   render() {
     return (
       <div className="create-entry">
-        <EntryNav />
         <EntryForm />
       </div>
     );
