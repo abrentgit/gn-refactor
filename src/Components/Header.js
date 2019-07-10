@@ -7,7 +7,7 @@ class Header extends React.Component {
     return (
       <div className="header-bar">
         <HomeNavBar />
-        <h1 className="home-title">Goodnest</h1>
+        <h1 className="home-title">Grateful Nest</h1>
       </div>
     );
   }

@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
 
-export default class NavBar extends Component {
+export default class EntryNav extends React.Component {
   render() {
     return (
       <div className="navbar-div">
@@ -12,8 +11,8 @@ export default class NavBar extends Component {
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/create-entry">
-            Create Entry
+          <Link className="nav-link" to="/dashboard">
+            Dashboard
           </Link>
         </li>
       </div>

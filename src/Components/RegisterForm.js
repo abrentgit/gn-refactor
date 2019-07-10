@@ -35,7 +35,7 @@ export class RegisterForm extends React.Component {
           <button type="submit">Sign up</button>
         </fieldset>
         <p className="accountText">
-          New to Goodnest? <Link to="/register"> Sign Up</Link>
+          New to Grateful Nest? <Link to="/register"> Sign Up</Link>
         </p>
       </form>
     );

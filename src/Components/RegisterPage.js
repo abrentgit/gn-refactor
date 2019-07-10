@@ -6,7 +6,7 @@ export class RegisterPage extends React.Component {
   render() {
     return (
       <div>
-        <h2>Goodnest Register</h2>
+        <h2>Grateful Nest Register</h2>
         <RegisterForm />
       </div>
     );
