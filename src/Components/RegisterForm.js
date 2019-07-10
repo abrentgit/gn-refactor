@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './RegisterForm.css';
 
 export class RegisterForm extends React.Component {
@@ -34,6 +34,9 @@ export class RegisterForm extends React.Component {
           />
           <button type="submit">Sign up</button>
         </fieldset>
+        <p className="accountText">
+          New to Goodnest? <Link to="/register"> Sign Up</Link>
+        </p>
       </form>
     );
   }

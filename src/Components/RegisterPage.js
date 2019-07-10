@@ -8,7 +8,6 @@ export class RegisterPage extends React.Component {
       <div>
         <h2>Goodnest Register</h2>
         <RegisterForm />
-        <Link to="/">Login</Link>
       </div>
     );
   }
