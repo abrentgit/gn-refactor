@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.dashname {
+  margin-top: 53px;
+}
+
+.logo {
+  margin-left: 0px;
+}
+
+@media only screen and (min-width: 700px) {
+  .items-list {
+    width: 33.333333%;
+    float: left;
+    padding: 0px 10px;
+  }
+
+  .dashboard-protected-data {
+    max-width: 1300px;
+    padding: 20px 20px;
+    margin: 0px auto;
+  }
+}

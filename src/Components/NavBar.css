@@ -1,11 +1,12 @@
 .nav-link {
   color: white;
 }
-nav {
+
+.navbar-div {
   text-align: center;
 }
 
-nav li {
+li {
   text-align: center;
   list-style-type: none;
   display: inline-block;
@@ -14,19 +15,11 @@ nav li {
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 20px;
   padding: 10px 10px;
-  background-color: rgb(36, 104, 207);
   opacity: 0.9;
-  box-shadow: 0px 2px 1px white inset, 0px -2px 8px white,
-    0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
-  -webkit-transition: box-shadow 0.5s;
-}
-
-.navbar-list {
-  margin-top: 70px;
 }
 
 @media only screen and (min-width: 700px) {
-  nav li {
+  li {
     text-align: center;
     list-style-type: none;
     display: inline;
@@ -35,13 +28,6 @@ nav li {
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
     padding: 10px 10px;
-    background-color: rgb(36, 104, 207);
     opacity: 0.9;
-    box-shadow: 0px 2px 1px white inset, 0px -2px 8px white,
-      0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
-    -webkit-transition: box-shadow 0.5s;
-  }
-  .navbar-list {
-    margin-top: 0px;
   }
 }

@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './LoginForm.css';
+// import { Link } from 'react-router-dom';
+import './RegisterForm.css';
 
-class LoginForm extends React.Component {
+export class RegisterForm extends React.Component {
   render() {
     return (
-      <form className="login-form">
+      <form className="signup-form">
         <fieldset>
-          <legend>Login</legend>
+          <legend>Sign up</legend>
           <label>Name</label>
           <input
             type="name"
@@ -39,4 +39,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default RegisterForm;

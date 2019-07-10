@@ -23,7 +23,7 @@ fieldset {
   margin: 0 auto 30px;
 }
 
-.login-form {
+.signup-form {
   width: 400px;
   padding: 40px;
   border-radius: 3px;
@@ -31,7 +31,7 @@ fieldset {
   margin: 0 auto;
 }
 
-.login-form legend {
+.signup-form legend {
   width: 100%;
   line-height: 38px;
   font-size: 35px;
@@ -89,20 +89,20 @@ button[type='submit']:focus {
   transition: background 0.1s;
 }
 
-.login-form p {
+.signup-form p {
   font-size: 16px;
   text-align: center;
   margin: 10px 0 0;
   color: #696969;
 }
 
-.login-form a {
+.signup-form a {
   color: #999;
   text-decoration: none;
   border-bottom: 1px solid #bbb;
 }
 
-.login-form a:hover {
+.signup-form a:hover {
   border-color: #999;
   color: #777;
 }
