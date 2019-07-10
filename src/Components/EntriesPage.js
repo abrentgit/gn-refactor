@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from './NavBar';
 import Entries from './Entries';
 
 //get my entries

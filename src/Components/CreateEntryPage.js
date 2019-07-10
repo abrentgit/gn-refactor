@@ -1,5 +1,4 @@
 import React from 'react';
-import EntryNav from './EntryNav';
 import EntryForm from './EntryForm';
 
 export class CreateEntryPage extends React.Component {
