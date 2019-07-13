@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
           <button type="submit">Sign up</button>
         </fieldset>
         <p className="accountText">
-          Already signed up? <Link to="/"> Login</Link>
+          New to Good Nest? <Link to="/register"> Register</Link>
         </p>
       </form>
     );

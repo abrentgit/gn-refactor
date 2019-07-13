@@ -26,4 +26,6 @@ class App extends React.Component {
   }
 }
 
+// STILL NEED TO CREATE ROUTE FOR SINGLE ENTRY VIEW - BUT TBD based
+
 export default App;
