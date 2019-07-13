@@ -1,13 +1,14 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
-import { login } from '../actions/auth';
+import { login } from './Actions/Auth';
 import Input from './input';
-// import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
-const passwordLength = length({ min: 10, max: 72 });
-const matchesPassword = matches('password');
+import { required, nonEmpty, matches, length, isTrimmed } from './validators';
 import { Link } from 'react-router-dom';
 import { registerUser } from './Actions/Users';
 import './RegisterForm.css';
+
+const passwordLength = length({ min: 10, max: 72 });
+const matchesPassword = matches('password');
 
 export class RegisterForm extends React.Component {
   onSubmit(values) {
@@ -28,31 +29,39 @@ export class RegisterForm extends React.Component {
       >
         <fieldset>
           <legend>Sign up</legend>
-          <label>Name</label>
-          <input
+          <label htmlFor="name">Name</label>
+          <Field
+            component={Input}
             type="name"
             placeholder=""
             name="user-name"
             id="user-name"
-            required
+            validate={[required, nonEmpty, isTrimmed]}
           />
-          <label>Email</label>
-          <input
+          <label htmlFor="email">Email</label>
+          <Field
+            component={Input}
             type="email"
             placeholder="foo@bar.com"
             name="user-email"
             id="user-email"
-            required
+            validate={[required, passwordLength, isTrimmed]}
           />
-          <label>Password</label>
-          <input
+          <label htmlFor="password">Password</label>
+          <Field
+            component={Input}
             placeholder="1234passw0rd"
             type="password"
             name="user-password"
             id="user-password"
-            required
+            validate={[required, nonEmpty, matchesPassword]}
           />
-          <button type="submit">Sign up</button>
+          <button
+            type="submit"
+            disabled={this.props.pristine || this.props.submitting}
+          >
+            Sign up
+          </button>
         </fieldset>
         <p className="accountText">
           New to Grateful Nest? <Link to="/register"> Sign Up</Link>
@@ -62,4 +71,8 @@ export class RegisterForm extends React.Component {
   }
 }
 
-export default RegisterForm;
+export default reduxForm({
+  form: 'registration',
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus('registration', Object.keys(errors)[0]))
+})(RegisterForm);
