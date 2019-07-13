@@ -3,7 +3,10 @@ import { SubmissionError } from 'redux-form';
 
 import { API_BASE_URL } from '/Users/anthonybrent/Projects/goodnest-test/my-goodtest/src/config.js';
 import { normalizeResponseErrors } from './utils';
-import { saveAuthToken, clearAuthToken } from './local-storage';
+import {
+  saveAuthToken,
+  clearAuthToken
+} from '/Users/anthonybrent/Projects/goodnest-test/my-goodtest/src/Local-Storage.js';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
