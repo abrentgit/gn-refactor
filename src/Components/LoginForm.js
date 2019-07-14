@@ -46,8 +46,11 @@ class LoginForm extends React.Component {
           id="user-password"
           validate={[required, nonEmpty]}
         />
-        <button disabled={this.props.pristine || this.props.submitting}>
-          >Sign up
+        <button
+          type="submit"
+          disabled={this.props.pristine || this.props.submitting}
+        >
+          Login
         </button>
         <p className="accountText">
           New to Good Nest? <Link to="/register"> Register</Link>

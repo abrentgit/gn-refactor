@@ -42,6 +42,11 @@ fieldset {
   margin: 0 auto 45px;
 }
 
+div.form-input {
+  margin: auto;
+  width: 300px;
+}
+
 input[type='name'],
 input[type='email'],
 input[type='password'],
