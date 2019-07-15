@@ -4,7 +4,7 @@ import { API_BASE_URL } from '/Users/anthonybrent/Projects/goodnest-test/my-good
 import { normalizeResponseErrors } from './utils';
 
 export const registerUser = user => dispatch => {
-  return fetch(`${API_BASE_URL}/users`, {
+  return fetch(`${API_BASE_URL}/register`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
