@@ -4,6 +4,7 @@ import { registerUser } from '../actions/users';
 import { login } from '../actions/auth';
 import Input from './Input';
 import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
+import './RegisterForm.css';
 const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches('password');
 
@@ -21,12 +22,13 @@ export class RegisterForm extends React.Component {
   render() {
     return (
       <form className="login-form">
+        <legend>Sign Up</legend>
         <label htmlFor="name">Name</label>
-        <Field component={Input} type="text" name="name" />
+        <Field component={Input} type="name" name="name" />
         <label htmlFor="email">Email</label>
         <Field
           component={Input}
-          type="text"
+          type="email"
           name="email"
           validate={[required, nonEmpty, isTrimmed]}
         />
