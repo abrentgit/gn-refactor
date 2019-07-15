@@ -6,6 +6,7 @@ import { Dashboard } from './Components/Dashboard';
 import { RegisterForm } from './Components/RegisterForm';
 import { EntriesPage } from './Components/EntriesPage';
 import { CreateEntryPage } from './Components/CreateEntryPage';
+import LoginForm from './Components/LoginForm';
 
 class App extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class App extends React.Component {
             <Route path="/register" component={RegisterForm} />
             <Route path="/entries" component={EntriesPage} />
             <Route path="/create-entry" component={CreateEntryPage} />
+            <Route path="/login" component={LoginForm} />
           </Switch>
         </div>
       </BrowserRouter>
