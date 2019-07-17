@@ -1,17 +1,42 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
-import { registerUser } from '../actions/users';
+// import { registerUser } from '../actions/users';
 import { login } from '../actions/auth';
 import Input from './Input';
 import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
 import './RegisterForm.css';
+import { SubmissionError } from 'redux-form';
+import { API_BASE_URL } from '/Users/anthonybrent/Projects/goodnest-test/my-goodtest/src/config.js';
+import { normalizeResponseErrors } from '../actions/utils';
+
 const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches('password');
 
+const registerUser = user => dispatch => {
+  return fetch(`${API_BASE_URL}/register`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .catch(err => {
+      const { reason, message, location } = err;
+      if (reason === 'ValidationError') {
+        // Convert ValidationErrors into SubmissionErrors for Redux Form
+        return Promise.reject(
+          new SubmissionError({
+            [location]: message
+          })
+        );
+      }
+    });
+};
+
 export class RegisterForm extends React.Component {
   onSubmit(values) {
-    console.log(this.props);
-
     const { email, password, name } = values;
     const user = { email, password, name };
     return this.props
