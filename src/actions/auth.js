@@ -1,12 +1,9 @@
 import jwtDecode from 'jwt-decode';
 import { SubmissionError } from 'redux-form';
 
-import { API_BASE_URL } from '/Users/anthonybrent/Projects/goodnest-test/my-goodtest/src/config.js';
+import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
-import {
-  saveAuthToken,
-  clearAuthToken
-} from '/Users/anthonybrent/Projects/goodnest-test/my-goodtest/src/Local-Storage.js';
+import { saveAuthToken, clearAuthToken } from '../local-storage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -45,16 +42,16 @@ const storeAuthInfo = (authToken, dispatch) => {
   saveAuthToken(authToken);
 };
 
-export const login = (name, password) => dispatch => {
+export const login = (username, password) => dispatch => {
   dispatch(authRequest());
   return (
-    fetch(`${API_BASE_URL}/auth/login`, {
+    fetch(`${API_BASE_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name,
+        username,
         password
       })
     })
@@ -67,7 +64,7 @@ export const login = (name, password) => dispatch => {
         const { code } = err;
         const message =
           code === 401
-            ? 'Incorrect name or password'
+            ? 'Incorrect username or password'
             : 'Unable to login, please try again';
         dispatch(authError(err));
         // Could not authenticate, so return a SubmissionError for Redux
