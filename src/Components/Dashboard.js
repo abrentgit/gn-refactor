@@ -31,7 +31,7 @@ const mapStateToProps = state => {
     name: state.auth.currentUser.name,
     email: `${currentUser.email}`,
     protectedData: state.protectedData.data,
-    quotes: state.quotes.quote
+    quotes: state.quotes.quotes
   };
 };
 
