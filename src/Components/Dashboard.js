@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { fetchProtectedData, fetchQuotes } from '../actions/protected-data';
+import { fetchProtectedData } from '../actions/protected-data';
+import { fetchQuotes } from '../actions/quotes-data';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -36,6 +37,10 @@ const mapStateToProps = state => {
 };
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+
+/* <div className="quote-container">
+          <blockquote>{this.props.quote}</blockquote>
+        </div> */
 
 // import React from 'react';
 // import NavBar from './NavBar';
