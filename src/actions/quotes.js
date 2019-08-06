@@ -33,7 +33,47 @@ export const fetchQuotes = () => (dispatch, getState) => {
       }
       return res.json();
     })
-    .then(quote => {
-      dispatch(getQuote(quote));
+    .then(response => {
+      const quotes = response.quotes;
+      // now inside quotes array
+      console.log(quotes);
+      quotes.forEach(function(quote) {
+        console.log(quote, 'this is the single quote');
+        console.log(quote.content, 'this is the content');
+
+        const singleQuote = quotes.content;
+        dispatch(getQuote(singleQuote));
+      });
     });
 };
+
+/// dispatch it, but need new function that will take the individual quote and break it up on dispatch
+
+// create a filter
+
+// function getDishes() {
+
+//   const token = localStorage.getItem('token');
+
+//   const headers = {
+//       'Authorization': `Bearer ${token}`,
+//       'Content-Type': 'application/json'
+//   };
+
+//   return fetch('https://orderinn.herokuapp.com/dishes', {
+//       headers: headers
+//   }).then(rawResponse => {
+//       return rawResponse.json();
+//   }).then(response => {
+//       let dishesHtml = '';
+//       dishes = response.dishes;
+//       response.dishes.forEach(dish => {
+//           let dishHtml = renderDish(dish);
+//           dishesHtml = dishesHtml.concat(dishHtml);
+//       });
+//       $('.dishes').append(dishesHtml);
+//       return response.dishes;
+//   }).catch(error => {
+//       throw error;
+//   });
+// }

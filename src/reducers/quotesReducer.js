@@ -1,11 +1,16 @@
 import { GET_QUOTE, GET_QUOTE_ERROR } from '../actions/quotes';
 
-export default function quoteReducer(state = [], action) {
+const initialState = {
+  quotes: '',
+  error: ''
+};
+
+export default function quoteReducer(state = initialState, action) {
   switch (action.type) {
     case GET_QUOTE:
-      return [...state, action.quote];
+      return { ...state, quotes: action.quote };
     case GET_QUOTE_ERROR:
-      return [...state, action.error];
+      return { ...state, error: action.error };
     default:
       return state;
   }

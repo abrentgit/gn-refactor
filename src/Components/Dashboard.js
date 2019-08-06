@@ -28,6 +28,8 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
   const { currentUser } = state.auth;
+  // what state its accessing
+  // auth is the state object, current user and email are what it needs
   return {
     email: state.auth.currentUser.email,
     name: `${currentUser.name}`,
