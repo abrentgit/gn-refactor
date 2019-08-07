@@ -4,10 +4,10 @@ import { API_BASE_URL } from '../config';
 // QUOTE ACTIONS
 
 export const GET_QUOTE = 'GET_QUOTE';
-export const getQuote = quote => {
+export const getQuote = quotes => {
   return {
     type: 'GET_QUOTE',
-    quote: quote
+    quotes: quotes
   };
 };
 
@@ -34,18 +34,33 @@ export const fetchQuotes = () => (dispatch, getState) => {
       return res.json();
     })
     .then(response => {
+      console.log(response.quotes);
       const quotes = response.quotes;
-      // now inside quotes array
-      console.log(quotes);
-      quotes.forEach(function(quote) {
-        console.log(quote, 'this is the single quote');
-        console.log(quote.content, 'this is the content');
-
-        const singleQuote = quotes.content;
-        dispatch(getQuote(singleQuote));
-      });
+      return quotes;
+    })
+    .then(quotes => {
+      dispatch(getQuote(quotes));
+    })
+    .catch(error => {
+      dispatch(getQuoteError(error));
     });
 };
+
+// // now inside quotes array
+// console.log(quotes);
+// quotes
+//   .forEach(function(quote) {
+//     console.log(quote, 'this is the single quote');
+//     console.log(quote.content, 'this is the content');
+
+//     // const singleQuote = quotes.content;
+//     dispatch(getQuote(quotes));
+//   })
+//   .catch(error => {
+//     dispatch(getQuoteError(error));
+//   });
+//     });
+// };
 
 /// dispatch it, but need new function that will take the individual quote and break it up on dispatch
 

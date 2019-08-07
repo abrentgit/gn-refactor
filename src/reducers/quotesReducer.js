@@ -2,16 +2,18 @@ import { GET_QUOTE, GET_QUOTE_ERROR } from '../actions/quotes';
 
 const initialState = {
   quotes: '',
-  error: ''
+  error: null
 };
 
-export default function quoteReducer(state = initialState, action) {
-  switch (action.type) {
-    case GET_QUOTE:
-      return { ...state, quotes: action.quote };
-    case GET_QUOTE_ERROR:
-      return { ...state, error: action.error };
-    default:
-      return state;
+export default function quotesReducer(state = initialState, action) {
+  if (action.type === GET_QUOTE) {
+    return Object.assign({}, state, {
+      quotes: action.quotes
+    });
+  } else if (action.type === GET_QUOTE_ERROR) {
+    return Object.assign({}, state, {
+      error: action.error
+    });
   }
+  return state;
 }
