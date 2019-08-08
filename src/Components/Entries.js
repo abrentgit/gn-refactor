@@ -3,7 +3,7 @@ import React from 'react';
 //create view entry button
 // need actions
 
-// const userEntries = this.props.protectedData.map((entry, index) => (
+// const entriesList = this.props.protectedData.map((entry, index) => (
 //     <div className="items-list" key={index}>
 //       <a href={entry.title}>
 //         <div className="date">{entry.date}</div>
@@ -26,4 +26,4 @@ export default class Entries extends React.Component {
   }
 }
 
-// <ul>{userEntries}</ul>
+// <ul>{entriesList}</ul>
