@@ -1,19 +1,13 @@
-import { GET_QUOTE, GET_QUOTE_ERROR } from '../actions/quotes';
-
+import { GET_QUOTE_SUCCESS } from '../actions/quotesActions';
 const initialState = {
-  quotes: '',
+  quotes: [{ id: '1', author: 'Philly', content: 'wonderwall is' }],
   error: null
 };
 
 export default function quotesReducer(state = initialState, action) {
-  if (action.type === GET_QUOTE) {
-    return Object.assign({}, state, {
-      quotes: action.quotes
-    });
-  } else if (action.type === GET_QUOTE_ERROR) {
-    return Object.assign({}, state, {
-      error: action.error
-    });
+  switch (action.type) {
+    case GET_QUOTE_SUCCESS:
+      console.log('quotes reducer is hitting?');
   }
   return state;
 }

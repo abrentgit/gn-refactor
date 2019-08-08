@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { fetchQuotes } from '../actions/quotes';
+import { loadQuotes } from '../actions/quotesActions';
 
 export class Dashboard extends React.Component {
   componentWillMount() {
+    this.props.dispatch(loadQuotes());
     console.log(this.props, 'this is the props');
-    this.props.dispatch(fetchQuotes());
   }
 
   render() {
@@ -15,7 +15,7 @@ export class Dashboard extends React.Component {
         <div className="dashboard-username">Email: {this.props.email}</div>
         <div className="dashboard-name">Name: {this.props.name}</div>
         <div className="dashboard-protected-data">
-          <h1>HELPER</h1>
+          <h1>HELPER </h1>
         </div>
       </div>
     );
