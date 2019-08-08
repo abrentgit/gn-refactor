@@ -1,6 +1,6 @@
 import { GET_QUOTE_SUCCESS } from '../actions/quotesActions';
 const initialState = {
-  quotes: [{ id: '1', author: 'Philly', content: 'wonderwall is' }],
+  quotes: [],
   error: null
 };
 
