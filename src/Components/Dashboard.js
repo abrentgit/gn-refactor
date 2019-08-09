@@ -6,6 +6,9 @@ import requiresLogin from './requires-login';
 import { loadQuotes } from '../actions/quotesActions';
 import Quote from './Quote';
 import './Dashboard.css';
+// import Navbar from './Navbar';
+import './NavBar.css';
+import HomeNav from './HomeNav';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -22,6 +25,7 @@ export class Dashboard extends React.Component {
     ));
     return (
       <div className="dashboard">
+        <HomeNav />
         <div className="dashboard-username">Email: {this.props.email}</div>
         <div className="dashboard-name">Name: {this.props.name}</div>
         <div className="dashboard-protected-data">
