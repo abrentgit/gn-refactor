@@ -10,25 +10,26 @@
   margin-left: 0px;
 }
 
-blockquote {
+.quote {
   margin: 0 auto;
   padding: 1em;
   border-left: 5px solid #999;
+  list-style: none;
 }
-blockquote:before {
+.quote:before {
   display: none;
 }
-blockquote:not(:first-of-type) {
+.quote:not(:first-of-type) {
   margin-top: 0.5em;
 }
-blockquote p {
+.quote p {
   color: #555;
   font-size: 12pt;
   line-height: 1.4;
   font-family: 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif',
     'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
 }
-blockquote footer {
+.quote footer {
   margin-top: 0.5em;
   padding: 0;
   color: #777;
@@ -36,31 +37,31 @@ blockquote footer {
   text-align: left;
   font-style: italic;
 }
-blockquote footer:before {
+.quote footer:before {
   content: '— ';
 }
-blockquote:nth-of-type(even) {
+.quote:nth-of-type(even) {
   text-align: right;
   border-left: none;
   border-right: 5px solid #999;
 }
-blockquote:nth-of-type(even) footer {
+.quote:nth-of-type(even) footer {
   text-align: right;
 }
-blockquote:nth-of-type(even) footer:before {
+.quote:nth-of-type(even) footer:before {
   content: '';
 }
-blockquote:nth-of-type(even) footer:after {
+.quote:nth-of-type(even) footer:after {
   content: ' —';
 }
-@element 'blockquote' and (min-width: 300px) {
-  blockquote {
+@element '.quote' and (min-width: 300px) {
+  .quote {
     padding: 1em 20% 1em 1em;
   }
-  blockquote p {
+  .quote p {
     font-size: 14pt;
   }
-  blockquote:nth-of-type(even) {
+  .quote:nth-of-type(even) {
     padding: 1em 1em 1em 20%;
   }
 }

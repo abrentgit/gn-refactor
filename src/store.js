@@ -1,4 +1,6 @@
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+// @ts-check
+
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 import { loadAuthToken } from './local-storage';
@@ -12,13 +14,10 @@ const store = createStore(
     auth: authReducer,
     quotes: quotesReducer
   }),
-  compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  applyMiddleware(thunk)
 );
 
-// Hydrate the authToken from localStorage if it exist
+// Hydrate the authToken from localStorage
 const authToken = loadAuthToken();
 if (authToken) {
   const token = authToken;

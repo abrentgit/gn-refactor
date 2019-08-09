@@ -1,21 +1,32 @@
+// @ts-check
+
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { loadQuotes } from '../actions/quotesActions';
+import Quote from './Quote';
+import './Dashboard.css';
 
 export class Dashboard extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.dispatch(loadQuotes());
-    console.log(this.props, 'this is the props');
+    console.log(this.props, 'this is the props from dashboard');
   }
 
   render() {
+    // const quotes = this.props.quotes;
+    const quotes = this.props.quotes.map((quote, index) => (
+      <li key={index}>
+        <Quote {...quote} />
+      </li>
+    ));
     return (
       <div className="dashboard">
         <div className="dashboard-username">Email: {this.props.email}</div>
         <div className="dashboard-name">Name: {this.props.name}</div>
         <div className="dashboard-protected-data">
-          <h1>HELPER </h1>
+          <h3>QUOTES OF THE DAY</h3>
+          <ul className="quote">{quotes}</ul>
         </div>
       </div>
     );
