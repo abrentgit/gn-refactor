@@ -10,12 +10,6 @@ body * {
   box-sizing: border-box;
 }
 
-fieldset {
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-
 .logo {
   display: block;
   width: auto;
@@ -42,7 +36,7 @@ fieldset {
   margin: 0 auto 45px;
 }
 
-div.form-input {
+.form-input {
   margin: auto;
   width: 300px;
 }
@@ -50,7 +44,7 @@ div.form-input {
 input[type='name'],
 input[type='email'],
 input[type='password'],
-button[type='submit'] {
+button {
   display: block;
   width: 100%;
   height: auto;
@@ -64,7 +58,7 @@ button[type='submit'] {
   transition: opacity 0.4s;
 }
 
-button[type='submit'] {
+button {
   height: auto;
   font-size: 22px;
   font-weight: 500;
@@ -79,14 +73,14 @@ button[type='submit'] {
 input[type='name']:focus,
 input[type='email']:focus,
 input[type='password']:focus,
-button[type='submit']:focus {
+button :focus {
   outline: auto 2px #87ceeb;
   outline: auto 5px -webkit-focus-ring-color;
   box-shadow: 0;
 }
 
-button[type='submit']:hover,
-button[type='submit']:focus {
+button:hover,
+button:focus {
   background-color: #0cb863;
   -webkit-transition: background 0.1s;
   -moz-transition: background 0.1s;

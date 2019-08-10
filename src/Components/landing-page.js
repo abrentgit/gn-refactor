@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-
+import './landingpage.css';
 import LoginForm from './login-form';
 
 export function LandingPage(props) {
@@ -12,9 +12,13 @@ export function LandingPage(props) {
 
   return (
     <div className="home">
+      <h1>GOOD NEST</h1>
       <h2>Tell Us What's Good!</h2>
       <LoginForm />
-      <Link to="/users">Register</Link>
+      <div className="register-link">
+        <p>Don't have an account yet?</p>
+        <Link to="/users">Register</Link>
+      </div>
     </div>
   );
 }
