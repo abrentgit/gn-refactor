@@ -1,9 +1,28 @@
-body {
-  color: black;
-  background: whitesmoke;
-}
-
 .home-title {
   font-family: 'DM Serif Display', serif;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #f6f6fa;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+a:visited {
+  color: #21434b;
+}
