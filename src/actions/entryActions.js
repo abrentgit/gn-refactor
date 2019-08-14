@@ -1,17 +1,45 @@
 import { API_BASE_URL } from '../config';
-// import { normalizeResponseErrors } from './utils';
+import { normalizeResponseErrors } from './utils';
 
-// CREATE A FETCH ENTRY PAGE BOARD ACTION, SUCCESS, ERROR AND REDUCER
-// const fetchEntryPage /
+export const FETCH_ENTRIES_SUCCESS = 'FETCH_ENTRIES_SUCCESS';
+export const fetchEntriesSuccess = entries => {
+  return {
+    type: FETCH_ENTRIES_SUCCESS,
+    entries: entries
+  };
+};
 
+export const FETCH_ENTRIES_ERROR = 'FETCH_ENTRIES_ERROR';
+export const fetchEntriesError = error => {
+  return {
+    type: FETCH_ENTRIES_ERROR,
+    error: error
+  };
+};
+
+export const POST_ENTRY_SUCCESS = 'ADD_ENTRY_SUCCESS';
+export const postEntrySuccess = entry => {
+  return {
+    type: POST_ENTRY_SUCCESS,
+    entry: entry
+  };
+};
+
+export const POST_ENTRY_ERROR = 'ADD_ENTRY_ERROR';
+export const postEntryError = error => {
+  return {
+    type: POST_ENTRY_ERROR,
+    error: error
+  };
+};
+
+// post entries function, using addEntry action
 export const postEntry = entry => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  // const user = getState().auth.currentUser.username;
   fetch(`${API_BASE_URL}/entries`, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${authToken}`,
-      'Content-Type': 'application/json'
+      Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify(entry)
   })
@@ -23,7 +51,26 @@ export const postEntry = entry => (dispatch, getState) => {
     })
     .then(entry => {
       console.log(`entry is: ${entry._id}`);
-      // ** PUT THIS BACK IN
-      // dispatch(fetchEntryPage(entry)); ///dispatch show new entry action on a success post page after posted
+      dispatch(postEntrySuccess(entry)).catch(err => {
+        dispatch(postEntryError(err));
+      });
+    });
+};
+
+// get entries function, using getUserEntries function
+export const fetchEntries = entries => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/entries/:user/:id`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({ entries }) => dispatch(fetchEntriesSuccess(entries)))
+    .catch(err => {
+      dispatch(fetchEntriesError(err));
     });
 };
