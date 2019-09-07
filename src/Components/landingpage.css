@@ -2,10 +2,21 @@ h1,
 h2 {
   text-align: center;
   color: white;
-  font-size: 80px;
+}
+
+.title {
+  font-size: 100px;
+  margin-left: -20px;
+}
+
+.logo {
+  display: block;
+  width: auto;
+  height: 80px;
+  margin: 0 auto 30px;
 }
 
 .register-link {
   text-align: center;
-  margin-top: -25px;
+  margin-top: -110px;
 }

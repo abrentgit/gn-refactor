@@ -57,10 +57,17 @@ export const postEntry = entry => (dispatch, getState) => {
     });
 };
 
-// get entries function, using getUserEntries function
+// get entries function
+// do i create variable for current user?
+// get user from auth and then pass it as a variable to the endpoint
+
 export const fetchEntries = entries => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  fetch(`${API_BASE_URL}/entries/:user/:id`, {
+  // grab user state first
+  const user = getState().auth.currentUser;
+  console.log(user, 'this is user id');
+
+  fetch(`${API_BASE_URL}/entries/` + user, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`,

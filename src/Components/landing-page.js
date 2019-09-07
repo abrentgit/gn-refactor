@@ -12,8 +12,8 @@ export function LandingPage(props) {
 
   return (
     <div className="home">
-      <h1>GOOD NEST</h1>
-      <h2>Tell Us What's Good!</h2>
+      <h1 className="title">GOODNEST</h1>
+      <img class="logo" src="../ostrich.png" alt="ostrich" />
       <LoginForm />
       <div className="register-link">
         <p>Don't have an account yet?</p>

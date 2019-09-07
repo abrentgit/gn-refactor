@@ -15,7 +15,7 @@ export class Dashboard extends React.Component {
   }
 
   render() {
-    // const quotes = this.props.quotes;
+    // MUST MAP ENTRIES LIKE YOU DID QUOTES
     const quotes = this.props.quotes.map((quote, index) => (
       <li key={index}>
         <Quote {...quote} />

@@ -6,38 +6,58 @@ import {
 } from '../actions/entryActions';
 
 const initialState = {
-    entries: [],
-    entry: {
-        title: null,
-        date: null,
-        content: null
-    },
-    error: null
-  };
+  entries: [],
+  entry: {
+    title: null,
+    date: null,
+    content: null
+  },
+  error: null
+};
 
-  export default entriesReducer(state = initialState, action) {
-      if (action.type === FETCH_ENTRIES_SUCCESS) {
-          return Object.assign({}, state, {
-              entries: action.entries,
-              error: null
-          });
-      } else if (action.type === FETCH_ENTRIES_ERROR) {
-          return Object.assign({}, state, {
-              error: action.error
-          });
-      } else if (action.type === POST_ENTRY_SUCCESS) {
-          return Object.assign({}, state, {
-            entries: [...state.entries, action.entry]
-              // copy existing entries, new entry added
-          });
-      } else if (action.type === POST_ENTRY_ERROR) {
-          return Object.assign({}, state, {
-              error: action.error // entry error
-          })
-      }
-      return state;
+export default function entriesReducer(state = initialState, action) {
+  if (action.type === FETCH_ENTRIES_SUCCESS) {
+    return Object.assign({}, state, {
+      entries: action.entries,
+      error: null
+    });
+  } else if (action.type === FETCH_ENTRIES_ERROR) {
+    return Object.assign({}, state, {
+      error: action.error
+    });
+  } else if (action.type === POST_ENTRY_SUCCESS) {
+    return Object.assign({}, state, {
+      entries: [...state.entries, action.entry]
+      // copy existing entries, new entry added
+    });
+  } else if (action.type === POST_ENTRY_ERROR) {
+    return Object.assign({}, state, {
+      error: action.error // entry error
+    });
   }
-  
+  return state;
+}
+
+// export const entriesReducer = (state=initialState, action) => {
+//     if (action.type === ADD_ITEM) {
+//         return Object.assign({}, state, {
+//             items: [...state.items, action.item]
+//         });
+//     }
+//     else if (action.type === UPDATE_ITEM) {
+//         return Object.assign({}, state, {
+//             items: state.items.map(item =>
+//                 item.id === action.item.id ? action.item : item
+//             )
+//         });
+//     }
+//     else if (action.type === DELETE_ITEM) {
+//         return Object.assign({}, state, {
+//             items: state.items.filter(item => item.id !== action.item.id)
+//         });
+//     }
+//     return state;
+// };
 
 //   export default function budgetReducer(state=initialState, action ) {
 // 	if (action.type === actions.ADD_LEDGER_ENTRY) {
