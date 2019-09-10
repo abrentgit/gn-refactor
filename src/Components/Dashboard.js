@@ -6,6 +6,7 @@ import { loadQuotes } from '../actions/quotesActions';
 import { fetchEntries } from '../actions/entryActions';
 import Quote from './Quote';
 import './Dashboard.css';
+import { EntryForm } from './EntryForm';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -23,9 +24,8 @@ export class Dashboard extends React.Component {
     ));
     return (
       <div className="dashboard">
-        <div className="dashboard-username">Email: {this.props.email}</div>
-        <div className="dashboard-name">Name: {this.props.name}</div>
-        <div className="entries" />
+        <div className="dashboard-name">Welcome {this.props.name}!</div>
+        <EntryForm />
         <div className="dashboard-protected-data">
           <h3>QUOTES OF THE DAY</h3>
           <ul className="quote">{quotes}</ul>

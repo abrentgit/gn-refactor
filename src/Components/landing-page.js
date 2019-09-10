@@ -13,7 +13,7 @@ export function LandingPage(props) {
   return (
     <div className="home">
       <h1 className="title">GOODNEST</h1>
-      <img class="logo" src="../ostrich.png" alt="ostrich" />
+      <img className="logo" src="../ostrich.png" alt="ostrich" />
       <LoginForm />
       <div className="register-link">
         <p>Don't have an account yet?</p>
