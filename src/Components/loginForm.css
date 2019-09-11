@@ -78,7 +78,6 @@ button :focus {
 
 button:hover,
 button:focus {
-  background-color: #0cb863;
   -webkit-transition: background 0.1s;
   -moz-transition: background 0.1s;
   -o-transition: background 0.1s;
@@ -100,7 +99,12 @@ button:focus {
 
 .login-form a:hover {
   border-color: #999;
-  color: #777;
+  /* color: #777; */
+}
+
+.form-error {
+  font-style: italic;
+  text-align: center;
 }
 
 .footer {

@@ -24,7 +24,7 @@ export class Dashboard extends React.Component {
     ));
     return (
       <div className="dashboard">
-        <div className="dashboard-name">Welcome {this.props.name}!</div>
+        <div className="dashboard-name"> Welcome {this.props.name}!</div>
         <EntryForm />
         <div className="dashboard-protected-data">
           <h3>QUOTES OF THE DAY</h3>

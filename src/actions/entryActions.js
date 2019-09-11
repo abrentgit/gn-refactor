@@ -1,6 +1,6 @@
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
-import { EntryForm } from '../components/EntryForm';
+// import { EntryForm } from '../components/EntryForm';
 
 export const FETCH_ENTRIES_SUCCESS = 'FETCH_ENTRIES_SUCCESS';
 export const fetchEntriesSuccess = entries => {

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 export class HeaderBar extends React.Component {
@@ -16,7 +17,17 @@ export class HeaderBar extends React.Component {
     if (this.props.loggedIn) {
       logOutButton = <button onClick={() => this.logOut()}>Log out</button>;
     }
-    return <div className="header-bar">{logOutButton}</div>;
+    return (
+      <div className="header-bar">
+        {logOutButton}
+        <nav role="navigation">
+          <ul>
+            <Link to="/entries">Entries</Link>
+            <Link to="/about">Register</Link>
+          </ul>
+        </nav>
+      </div>
+    );
   }
 }
 
@@ -25,20 +36,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(HeaderBar);
-
-// import React from 'react';
-// import HomeNavBar from './HomeNav';
-// import './Header.css';
-
-// class Header extends React.Component {
-//   render() {
-//     return (
-//       <div className="header-bar">
-//         <HomeNavBar />
-//         <h1 className="home-title">Grateful Nest</h1>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Header;

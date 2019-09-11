@@ -39,7 +39,7 @@ export class EntryForm extends React.Component {
         <textarea
           id="message"
           type="text"
-          placeholder="MESSAGE"
+          placeholder="What are you grateful for?"
           defaultValue={''}
         />
         <input id="submit" type="submit" defaultValue="GO!" />
