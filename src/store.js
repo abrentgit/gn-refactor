@@ -7,14 +7,13 @@ import { loadAuthToken } from './local-storage';
 import authReducer from './reducers/auth';
 import quotesReducer from './reducers/quotesReducer';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
-import entriesReducer from './reducers/entriesReducer';
+// import entriesReducer from './reducers/entriesReducer';
 
 const store = createStore(
   combineReducers({
     form: formReducer,
     auth: authReducer,
-    quotes: quotesReducer,
-    entries: entriesReducer
+    quotes: quotesReducer
   }),
   applyMiddleware(thunk)
 );

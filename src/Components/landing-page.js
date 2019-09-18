@@ -6,7 +6,6 @@ import LoginForm from './login-form';
 
 export function LandingPage(props) {
   if (props.loggedIn) {
-    console.log('you are logged in');
     return <Redirect to="/dashboard" />;
   }
 

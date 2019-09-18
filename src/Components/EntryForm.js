@@ -1,53 +1,69 @@
 import React from 'react';
 import './EntryForm.css';
-// import { Field, reduxForm, focus } from 'redux-form';
-// // import { postEntry } from '../actions/entryActions';
+import { connect } from 'react-redux';
+import { Field, reduxForm, focus } from 'redux-form';
+import { postEntry } from '../actions/entryActions';
+import { required, nonEmpty } from '../validators';
+import Input from '../components/input';
+import { withRouter } from 'react-router-dom';
 
 export class EntryForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      email: ''
-    };
-
-    this.handleChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  onSubmit(values) {
+    console.log('entry submitted');
+    this.props.dispatch(postEntry(values));
   }
+  //     this.handleChange = this.handleInputChange.bind(this);
+  // }      // this.handleSubmit = this.handleSubmit.bind(this);
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+  // handleInputChange(event) {
+  //   const target = event.target;
+  //   const value = target.type === 'checkbox' ? target.checked : target.value;
+  //   const name = target.name;
 
-    this.setState({
-      [name]: value
-    });
-    console.log('Change detected. State updated' + name + ' = ' + value);
-  }
-
-  handleSubmit(event) {
-    alert(
-      'A form was submitted: ' + this.state.name + ' // ' + this.state.email
-    );
-    event.preventDefault();
-  }
+  //   this.setState({
+  //     [name]: value
+  //   });
+  //   console.log('Change detected. State updated' + name + ' = ' + value);
+  // }
 
   render() {
     return (
-      <form id="form" className="topBefore">
-        <textarea
-          id="message"
-          type="text"
-          placeholder="What are you grateful for?"
-          defaultValue={''}
-        />
-        <input id="submit" type="submit" defaultValue="GO!" />
+      <form id="form" className="topBefore" onSubmit={this.onSubmit(values)}>
+        <div>
+          <label htmlFor="entry" className="entry">
+            Grateful Section
+          </label>
+          <Field
+            component={Input}
+            id="message"
+            type="text"
+            validate={[required, nonEmpty]}
+            placeholder="What are you grateful for?"
+            defaultValue={''}
+            aria-required="true"
+          />
+        </div>
+        <button
+          id="submit"
+          type="submit"
+          disabled={this.props.pristine || this.props.submitting}
+        >
+          Submit
+        </button>
       </form>
     );
   }
 }
-export default EntryForm;
+
+const mapStateToProps = state => ({
+  entries: state.entries.entries
+});
+
+export default reduxForm({
+  form: 'add',
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus('contact', Object.keys(errors)[0]))
+})(withRouter(connect(mapStateToProps)(EntryForm)));
 
 // import React from 'react';
 // import './EntryForm.css';
@@ -58,7 +74,6 @@ export default EntryForm;
 // // import Input from './input';
 // // need to create actions
 // // import { login } from '../actions/auth';
-// import { required, nonEmpty } from '../validators.js';
 
 // export class EntryForm extends React.Component {
 //   onSubmit(values) {
@@ -101,8 +116,3 @@ export default EntryForm;
 //     );
 //   }
 // }
-
-// export default reduxForm({
-//   form: 'entry',
-//   onSubmitFail: (errors, dispatch) => dispatch(focus('entry', 'content'))
-// })(EntryForm);
