@@ -1,14 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import EntryForm from './EntryForm';
 
-export class CreateEntryPage extends React.Component {
-  render() {
-    return (
-      <div className="create-entry">
-        <EntryForm />
+export function CreateEntryPage(props) {
+  return (
+    <div className="text-center bg-dark my-2">
+      <div className="mx-5 mt-5">
+        <p>
+          Submit a your thoughts on today. Journal with empathy, understanding,
+          and compassion for yourself and those who you've come across today.
+        </p>
       </div>
-    );
-  }
+      <EntryForm />
+    </div>
+  );
 }
 
-export default CreateEntryPage;
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(CreateEntryPage);

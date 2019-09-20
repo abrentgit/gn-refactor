@@ -9,26 +9,16 @@ import { withRouter } from 'react-router-dom';
 
 export class EntryForm extends React.Component {
   onSubmit(values) {
+    values.username = this.props.name;
     console.log('entry submitted');
     this.props.dispatch(postEntry(values));
   }
-  //     this.handleChange = this.handleInputChange.bind(this);
-  // }      // this.handleSubmit = this.handleSubmit.bind(this);
-
-  // handleInputChange(event) {
-  //   const target = event.target;
-  //   const value = target.type === 'checkbox' ? target.checked : target.value;
-  //   const name = target.name;
-
-  //   this.setState({
-  //     [name]: value
-  //   });
-  //   console.log('Change detected. State updated' + name + ' = ' + value);
-  // }
-
   render() {
     return (
-      <form id="form" className="topBefore" onSubmit={this.onSubmit(values)}>
+      <form
+        className="mb-5 p-3 text-center bg-dark"
+        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+      >
         <div>
           <label htmlFor="entry" className="entry">
             Grateful Section
@@ -56,7 +46,7 @@ export class EntryForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  entries: state.entries.entries
+  name: state.auth.name
 });
 
 export default reduxForm({
