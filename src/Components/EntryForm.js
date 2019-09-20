@@ -6,22 +6,24 @@ import { postEntry } from '../actions/entryActions';
 import { required, nonEmpty } from '../validators';
 import Input from '../components/input';
 import { withRouter } from 'react-router-dom';
+import './EntryForm.css';
 
 export class EntryForm extends React.Component {
   onSubmit(values) {
-    values.username = this.props.name;
+    values.name = this.props.name;
     console.log('entry submitted');
     this.props.dispatch(postEntry(values));
   }
   render() {
     return (
       <form
-        className="mb-5 p-3 text-center bg-dark"
+        id="form"
+        className="entry-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
         <div>
           <label htmlFor="entry" className="entry">
-            Grateful Section
+            Create Journal Entry
           </label>
           <Field
             component={Input}
