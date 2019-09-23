@@ -16,25 +16,39 @@ export class EntryForm extends React.Component {
   }
   render() {
     return (
-      <form
+      <div>
+        <div id="container">
+          <span className="input message">
+            <textarea className="input__field" id="input-5" defaultValue={''} />
+            <label htmlFor="input-5" className="input__label">
+              <span className="input__label-content">Message</span>
+            </label>
+          </span>
+          <button id="send-button" type="button">
+            Send
+          </button>
+        </div>
+      </div>
+    );
+  }
+}
+/* <form
         id="form"
         className="entry-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
-        <div>
-          <label htmlFor="entry" className="entry">
-            Create Journal Entry
-          </label>
-          <Field
-            component={Input}
-            id="message"
-            type="text"
-            validate={[required, nonEmpty]}
-            placeholder="What are you grateful for?"
-            defaultValue={''}
-            aria-required="true"
-          />
-        </div>
+        <label htmlFor="entry" className="entry">
+          Create Journal Entry
+        </label>
+        <Field
+          component={Input}
+          id="message"
+          type="text"
+          validate={[required, nonEmpty]}
+          placeholder="What are you grateful for?"
+          defaultValue={''}
+          aria-required="true"
+        />
         <button
           id="submit"
           type="submit"
@@ -42,10 +56,10 @@ export class EntryForm extends React.Component {
         >
           Submit
         </button>
-      </form>
-    );
-  }
-}
+      </form> */
+//     );
+//   }
+// }
 
 const mapStateToProps = state => ({
   name: state.auth.name

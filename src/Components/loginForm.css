@@ -3,7 +3,7 @@ body * {
 }
 
 body {
-  background: #298eea;
+  background-color: #cba2b0;
   font-family: 'Roboto', helvetica, sans-serif;
   padding: 60px 0 0;
   margin: 0;
@@ -56,7 +56,6 @@ button {
   font-weight: 500;
   color: white;
   cursor: pointer;
-  margin-right: 50px;
   margin-top: 20px;
   width: 80px;
   background-color: Transparent;

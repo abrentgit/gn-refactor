@@ -1,209 +1,154 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100, 300, 400);
+@import url(https://fonts.googleapis.com/css?family=Raleway:200, 500, 700, 800);
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::-webkit-input-placeholder,
-textarea:focus::-webkit-input-placeholder {
-  color: #bbb5af;
-}
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::-moz-placeholder,
-textarea:focus::-moz-placeholder {
-  color: #bbb5af;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::placeholder,
-textarea::focus:placeholder {
-  color: #bbb5af;
-}
-
-input::-ms-placeholder,
-textarea::-ms-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::-ms-placeholder,
-textarea:focus::-ms-placeholder {
-  color: #bbb5af;
-}
-
-/* on hover placeholder */
-
-input:hover::-webkit-input-placeholder,
-textarea:hover::-webkit-input-placeholder {
-  color: #e2dedb;
-  font-size: 0.875em;
-}
-
-input:hover:focus::-webkit-input-placeholder,
-textarea:hover:focus::-webkit-input-placeholder {
-  color: #cbc6c1;
-}
-
-input:hover::-moz-placeholder,
-textarea:hover::-moz-placeholder {
-  color: #e2dedb;
-  font-size: 0.875em;
-}
-
-input:hover:focus::-moz-placeholder,
-textarea:hover:focus::-moz-placeholder {
-  color: #cbc6c1;
-}
-
-input:hover::placeholder,
-textarea:hover::placeholder {
-  color: #e2dedb;
-  font-size: 0.875em;
-}
-
-input:hover:focus::placeholder,
-textarea:hover:focus::placeholder {
-  color: #cbc6c1;
-}
-
-input:hover::placeholder,
-textarea:hover::placeholder {
-  color: #e2dedb;
-  font-size: 0.875em;
-}
-
-input:hover:focus::-ms-placeholder,
-textarea:hover::focus:-ms-placeholder {
-  color: #cbc6c1;
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  background: #e2dedb;
-  color: #b3aca7;
+  font-weight: 500;
+  font-size: 1.05em;
+  font-family: 'Raleway', Arial, sans-serif;
 }
 
-header {
+#container {
+  position: absolute;
+  width: 710px;
+  height: 5em;
+  left: 50%;
+  top: 50%;
+  margin-left: -355px;
+  margin-top: -2.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.input {
   position: relative;
-  margin: 100px 0 25px 0;
-  font-size: 2.3em;
-  text-align: center;
-  letter-spacing: 7px;
+  margin: 1em;
+  width: calc(50% - 2em);
+  height: 80px;
 }
 
-#form {
-  position: relative;
-  width: 500px;
-  margin: 50px auto 100px auto;
-}
-
-input {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.875em;
-  width: 470px;
-  height: 50px;
-  padding: 0px 15px 0px 15px;
-
-  background: transparent;
-  outline: none;
-  color: #726659;
-
-  border: solid 1px #b3aca7;
-  border-bottom: none;
-
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-}
-
-input:hover {
-  background: #b3aca7;
-  color: #e2dedb;
+.message {
+  width: calc(100% - 2em);
+  height: 200px;
 }
 
 textarea {
-  width: 470px;
-  max-width: 470px;
-  height: 110px;
-  max-height: 110px;
-  padding: 15px;
+  border: none;
+  resize: none;
+}
 
+.input__field {
+  position: absolute;
+  margin: 0.8em 0;
+  padding: 0.4em;
+  width: 100%;
+  height: calc(100% - 1.6em);
+  border: none;
+  border-radius: 0;
   background: transparent;
+  color: #ffcc00;
+  font-size: 1.55em;
+  font-weight: bold;
+  -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
   outline: none;
-
-  color: #726659;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.875em;
-
-  border: solid 1px #b3aca7;
-
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
 }
 
-textarea:hover {
-  background: #b3aca7;
-  color: #e2dedb;
+.input__label {
+  position: absolute;
+  padding: 0 1em;
+  margin: 1.2em 0;
+  width: 100%;
+  height: calc(100% - 2.4em);
+  color: white;
+  font-weight: bold;
+  font-size: 70.25%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-#submit {
-  padding: 0;
-  margin: -5px 0px 0px 0px;
-
-  font-family: 'Lato', sans-serif;
-  font-size: 0.875em;
-  color: #b3aca7;
-
-  outline: none;
-  cursor: pointer;
-
-  border: solid 1px #b3aca7;
-  border-top: none;
+.input__label-content {
+  position: relative;
+  display: block;
+  padding: 1.5em 0;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
 }
 
-#submit:hover {
-  color: #e2dedb;
+.input__label::before,
+.input__label:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: whitesmoke;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
 }
-/* .grateful-input {
-  width: 300px;
-  height: 300px;
-  display: flex;
-  flex-flow: column nowrap;
+
+.input__label::before {
+  top: 0;
+}
+
+.input__label::after {
+  bottom: 0;
+}
+
+.input__field:focus + .input__label .input__label-content,
+.input--filled .input__label-content {
+  -webkit-transform: translate3d(0, -90%, 0);
+  transform: translate3d(0, -90%, 0);
+}
+
+.input__field:focus + .input__label::before,
+.input--filled .input__label::before {
+  -webkit-transform: translate3d(0, -0.5em, 0);
+  transform: translate3d(0, -0.5em, 0);
+}
+
+.input__field:focus + .input__label::after,
+.input--filled .input__label::after {
+  -webkit-transform: translate3d(0, 0.5em, 0);
+  transform: translate3d(0, 0.5em, 0);
+}
+
+#send-button {
+  width: 200px;
+  height: 60px;
   text-align: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  justify-content: space-between;
-  margin: 0 auto;
+  background-color: white;
+  color: #000;
+  border: 0;
+  font-weight: bold;
+  font-size: 70.25%;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
 }
 
-label {
-  margin-bottom: -50px;
-  font-size: 34px;
+#send-button:hover,
+#send-button:focus {
+  outline: 0;
+  background-color: #ffcc00;
+  color: #000;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
 }
-
-input {
-  width: 75%;
-  margin: 0 auto;
-  margin-bottom: -100px;
-}
-
-button {
-  width: 150px;
-  margin: 0 auto;
-} */
