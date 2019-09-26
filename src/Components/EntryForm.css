@@ -13,6 +13,13 @@ body {
   font-family: 'Raleway', Arial, sans-serif;
 }
 
+.journal-question {
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 1.55em;
+  font-weight: bold;
+}
+
 #container {
   position: absolute;
   width: 710px;
@@ -46,16 +53,18 @@ textarea {
 
 .input__field {
   position: absolute;
-  margin: 0.8em 0;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
   padding: 0.4em;
-  width: 100%;
-  height: calc(100% - 1.6em);
+  width: 80%;
+  height: 70%;
   border: none;
   border-radius: 0;
   background: transparent;
-  color: #ffcc00;
+  color: white;
   font-size: 1.55em;
-  font-weight: bold;
   -webkit-appearance: none; /* for box shadows to show on iOS */
 }
 

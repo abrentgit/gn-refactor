@@ -18,10 +18,13 @@ export class EntryForm extends React.Component {
     return (
       <div>
         <div id="container">
+          <p className="journal-question">
+            <i>What are you grateful for today?</i>
+          </p>
           <span className="input message">
             <textarea className="input__field" id="input-5" defaultValue={''} />
             <label htmlFor="input-5" className="input__label">
-              <span className="input__label-content">Message</span>
+              <span className="input__label-content"></span>
             </label>
           </span>
           <button id="send-button" type="button">
