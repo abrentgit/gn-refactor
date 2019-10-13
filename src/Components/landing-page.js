@@ -14,10 +14,13 @@ export function LandingPage(props) {
       <h1 className="title">GOODNEST</h1>
       <img className="logo" src="../ostrich.png" alt="ostrich" />
       <LoginForm />
-      <div className="register-link">
-        <p>Don't have an account yet?</p>
-        <Link to="/users">Register</Link>
-      </div>
+      <footer className="register-link">
+        <p>
+          <p>
+            <Link to="/users"> Haven't signed up? Register here. </Link>
+          </p>
+        </p>
+      </footer>
     </div>
   );
 }

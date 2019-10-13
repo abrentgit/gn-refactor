@@ -8,16 +8,3 @@ h2 {
   font-size: 100px;
   margin-left: -20px;
 }
-
-.logo {
-  display: block;
-  width: auto;
-  height: 80px;
-  margin: 0 auto 30px;
-}
-
-.register-link {
-  text-align: center;
-  margin-top: -110px;
-  text-decoration: underline;
-}
