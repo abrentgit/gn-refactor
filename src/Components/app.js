@@ -7,8 +7,8 @@ import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import { refreshAuthToken } from '../actions/auth';
-import QuotePage from './quotepage';
 import { CreateEntryPage } from './CreateEntryPage';
+import { About } from './About';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -47,8 +47,8 @@ export class App extends React.Component {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/users" component={RegistrationPage} />
-        <Route exact path="/quotes" component={QuotePage} />
         <Route exact path="/entries" component={CreateEntryPage} />
+        <Route exact path="/about" component={About} />
       </div>
     );
   }

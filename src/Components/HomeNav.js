@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import goodLogo from '../goodlogo.png';
+import './HomeNav.css';
 
-export default class HomeNavBar extends Component {
+export default class HomeNav extends Component {
   render() {
     return (
       <div className="navbar-div">
-        <img src={goodLogo} className="logo" alt="full-logo" />
-        <li className="nav-item">
-          <Link className="nav-link" to="/login">
-            Account
-          </Link>
-        </li>
         <li className="nav-item">
           <Link className="nav-link" to="/about">
-            About
+            <li>About</li>
           </Link>
         </li>
       </div>
