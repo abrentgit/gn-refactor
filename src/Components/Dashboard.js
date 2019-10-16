@@ -6,6 +6,7 @@ import { loadQuotes } from '../actions/quotesActions';
 import Quote from './Quote';
 import './Dashboard.css';
 import CreateEntryBtn from './create-entry-btn';
+import HomeNav from './HomeNav';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ export class Dashboard extends React.Component {
     return (
       <div className="dashboard">
         <img className="logo" src="../ostrich.png" alt="ostrich" />
+        <HomeNav />
         <div className="dashboard-name"> Welcome {this.props.name}!</div>
         <div className="dashboard-name">
           <p>

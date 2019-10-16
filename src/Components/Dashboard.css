@@ -2,12 +2,19 @@
   box-sizing: border-box;
 }
 
+.logout-btn {
+  background: none;
+  text-align: right;
+  padding-right: 50px;
+}
+
 .dashname {
   margin-top: 53px;
 }
 
 .dashboard-name {
   text-align: center;
+  color: white;
 }
 
 .quote {
@@ -54,6 +61,7 @@
 .quote:nth-of-type(even) footer:after {
   content: ' —';
 }
+
 @element '.quote' and (min-width: 300px) {
   .quote {
     padding: 1em 20% 1em 1em;

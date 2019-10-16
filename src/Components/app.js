@@ -9,6 +9,7 @@ import RegistrationPage from './registration-page';
 import { refreshAuthToken } from '../actions/auth';
 import { CreateEntryPage } from './CreateEntryPage';
 import { About } from './About';
+import { Entries } from './Entries';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -49,10 +50,14 @@ export class App extends React.Component {
         <Route exact path="/users" component={RegistrationPage} />
         <Route exact path="/entries" component={CreateEntryPage} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/userEntries" component={Entries} />
       </div>
     );
   }
 }
+
+// I NEED TO HAVE A PAGE OF USER ENTRIES MADE
+// I NEED A PAGE OF THANK YOU/ENTRY SUBMITTED PAGE
 
 const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !== null,

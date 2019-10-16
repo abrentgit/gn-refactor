@@ -19,6 +19,7 @@ export function About() {
           </Link>
         </ul>
       </nav>
+
       <img className="logo" src="../ostrich.png" alt="ostrich" />
       <div className="description">
         <p>Welcome to Goodnest!</p>
