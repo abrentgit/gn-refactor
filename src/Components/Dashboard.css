@@ -17,10 +17,14 @@
   color: white;
 }
 
+.quote-title {
+  color: white;
+  text-align: center;
+}
+
 .quote {
   margin: 0 auto;
   padding: 1em;
-  border-left: 5px solid #999;
   list-style: none;
 }
 .quote:before {
