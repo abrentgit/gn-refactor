@@ -32,7 +32,7 @@ export class EntryForm extends React.Component {
         {error}
         <img className="logo" src="../ostrich.png" alt="ostrich" />
         <p className="journal-question">
-          <i>What are you grateful for today?</i>
+          <i>Name a few things you're grateful for today?</i>
         </p>
         <label htmlFor="entry"></label>
         <Field

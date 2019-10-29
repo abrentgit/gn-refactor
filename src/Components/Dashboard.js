@@ -22,11 +22,11 @@ export class Dashboard extends React.Component {
     ));
     return (
       <div className="dashboard">
-        <img className="logo" src="../ostrich.png" alt="ostrich" />
         <DashboardNav />
-        <div className="dashboard-name"> Welcome {this.props.name}!</div>
+        <h1 className="title">GN</h1>
+        <img className="logo" src="../ostrich.png" alt="ostrich" />
+        <div className="dashboard-name"> Welcome back {this.props.name}!</div>
         <div className="dashboard-protected-data">
-          <h3 className="quote-title">QUOTE OF THE DAY</h3>
           <p className="quote">{quotes}</p>
         </div>
       </div>

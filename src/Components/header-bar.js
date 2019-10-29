@@ -4,6 +4,7 @@ import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 // import { Link } from 'react-router-dom';
 import './Header.css';
+import './DashNav.css';
 
 export class HeaderBar extends React.Component {
   logOut() {

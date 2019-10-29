@@ -7,6 +7,31 @@
   margin: 30px auto 30px;
 }
 
+input[type='text'] {
+  margin-bottom: 40px;
+  padding: 0px;
+}
+
+.entry-form {
+  margin: 100px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input:hover {
+  background: #b3aca7;
+  color: #e2dedb;
+}
+
 .journal-question {
   font-family: Arial, sans-serif;
   margin-top: 50px;
@@ -18,46 +43,46 @@
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #aca49c;
+  color: white;
   font-size: 0.875em;
 }
 
 input:focus::-webkit-input-placeholder,
 textarea:focus::-webkit-input-placeholder {
-  color: #bbb5af;
+  color: white;
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #aca49c;
+  color: white;
   font-size: 0.875em;
 }
 
 input:focus::-moz-placeholder,
 textarea:focus::-moz-placeholder {
-  color: #bbb5af;
+  color: white;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #aca49c;
+  color: white;
   font-size: 0.875em;
 }
 
 input:focus::placeholder,
 textarea::focus:placeholder {
-  color: #bbb5af;
+  color: white;
 }
 
 input::-ms-placeholder,
 textarea::-ms-placeholder {
-  color: #aca49c;
+  color: white;
   font-size: 0.875em;
 }
 
 input:focus::-ms-placeholder,
 textarea:focus::-ms-placeholder {
-  color: #bbb5af;
+  color: white;
 }
 
 /* on hover placeholder */
@@ -70,23 +95,23 @@ textarea:hover::-webkit-input-placeholder {
 
 input:hover:focus::-webkit-input-placeholder,
 textarea:hover:focus::-webkit-input-placeholder {
-  color: #cbc6c1;
+  color: white;
 }
 
 input:hover::-moz-placeholder,
 textarea:hover::-moz-placeholder {
-  color: #e2dedb;
+  color: white;
   font-size: 0.875em;
 }
 
 input:hover:focus::-moz-placeholder,
 textarea:hover:focus::-moz-placeholder {
-  color: #cbc6c1;
+  color: white;
 }
 
 input:hover::placeholder,
 textarea:hover::placeholder {
-  color: #e2dedb;
+  color: white;
   font-size: 0.875em;
 }
 
@@ -97,18 +122,18 @@ textarea:hover:focus::placeholder {
 
 input:hover::placeholder,
 textarea:hover::placeholder {
-  color: #e2dedb;
+  color: white;
   font-size: 0.875em;
 }
 
 input:hover:focus::-ms-placeholder,
 textarea:hover::focus:-ms-placeholder {
-  color: #cbc6c1;
+  color: white;
 }
 
 body {
   font-family: 'Lato', sans-serif;
-  background: #e2dedb;
+  background: white;
   color: #b3aca7;
 }
 
@@ -129,54 +154,13 @@ header {
 input {
   font-family: 'Lato', sans-serif;
   font-size: 0.875em;
-  width: 470px;
-  height: 50px;
-  padding: 0px 15px 0px 15px;
-
   background: transparent;
-  outline: none;
-  color: #726659;
-
-  border: solid 1px #b3aca7;
-  border-bottom: none;
-
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
 }
 
-input:hover {
-  background: #b3aca7;
+/* input:hover {
+  background: white;
   color: #e2dedb;
-}
-
-textarea {
-  width: 470px;
-  max-width: 470px;
-  height: 110px;
-  max-height: 110px;
-  padding: 15px;
-
-  background: transparent;
-  outline: none;
-
-  color: #726659;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.875em;
-
-  border: solid 1px #b3aca7;
-
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-}
-
-textarea:hover {
-  background: #b3aca7;
-  color: #e2dedb;
-}
+} */
 
 #submit {
   width: 502px;
