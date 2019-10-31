@@ -1,4 +1,5 @@
 import React from 'react';
+import './EntryForm.css';
 
 export default class EntryInput extends React.Component {
   componentDidUpdate(prevProps) {

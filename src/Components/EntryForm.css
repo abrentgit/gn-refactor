@@ -8,28 +8,11 @@
 }
 
 input[type='text'] {
-  margin-bottom: 40px;
-  padding: 0px;
-}
-
-.entry-form {
-  margin: 100px;
-}
-
-input {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px 20px;
+  margin: 8px 0;
   box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input:hover {
-  background: #b3aca7;
-  color: #e2dedb;
+  border: none;
 }
 
 .journal-question {
@@ -145,22 +128,19 @@ header {
   letter-spacing: 7px;
 }
 
-#form {
-  position: relative;
-  width: 500px;
-  margin: 50px auto 100px auto;
-}
-
 input {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: both;
   font-family: 'Lato', sans-serif;
   font-size: 0.875em;
   background: transparent;
 }
-
-/* input:hover {
-  background: white;
-  color: #e2dedb;
-} */
 
 #submit {
   width: 502px;

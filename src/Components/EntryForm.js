@@ -3,7 +3,7 @@ import './EntryForm.css';
 import { connect } from 'react-redux';
 import { Field, reduxForm, focus } from 'redux-form';
 import { postEntry } from '../actions/entryActions';
-import Input from '../components/input';
+import entryInput from '../components/input';
 import { withRouter } from 'react-router-dom';
 import { required, nonEmpty } from '../validators.js';
 import './EntryForm.css';
@@ -32,11 +32,11 @@ export class EntryForm extends React.Component {
         {error}
         <img className="logo" src="../ostrich.png" alt="ostrich" />
         <p className="journal-question">
-          <i>Name a few things you're grateful for today?</i>
+          <i>Name a few things you're grateful for today...</i>
         </p>
         <label htmlFor="entry"></label>
         <Field
-          component={Input}
+          component={entryInput}
           type="text"
           name="text"
           id="entry-text"
@@ -52,28 +52,6 @@ export class EntryForm extends React.Component {
     );
   }
 }
-
-//   render() {
-//     return (
-//       <div>
-//         <img className="logo" src="../ostrich.png" alt="ostrich" />
-//         <div id="container">
-//           <p className="journal-question">
-//             <i>What are you grateful for today?</i>
-//           </p>
-//           <div className="input message">
-//             <label htmlFor="input-5" className="input__label">
-//               <Field component={Input} defaultValue={''} />
-//             </label>
-//           </div>
-//           <button id="send-button" type="button">
-//             Send
-//           </button>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
 
 const mapStateToProps = state => ({
   name: state.auth.name
