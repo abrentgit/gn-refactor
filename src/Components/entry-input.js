@@ -20,7 +20,7 @@ export default class EntryInput extends React.Component {
     }
 
     return (
-      <div className="form-input">
+      <div className="entry-input">
         <label htmlFor={this.props.input.name}>
           {this.props.label}
           {error}
@@ -28,6 +28,7 @@ export default class EntryInput extends React.Component {
         </label>
         <input
           {...this.props.input}
+          className="form-control"
           id={this.props.input.name}
           type={this.props.type}
           ref={input => (this.input = input)}

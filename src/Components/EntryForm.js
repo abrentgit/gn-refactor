@@ -25,30 +25,49 @@ export class EntryForm extends React.Component {
       );
     }
     return (
-      <form
-        className="entry-form"
-        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-      >
-        {error}
+      <div className="form-wrapper">
+        <h1 className="section-header">JOURNAL FORM</h1>
         <img className="logo" src="../ostrich.png" alt="ostrich" />
-        <p className="journal-question">
-          <i>Name a few things you're grateful for today...</i>
-        </p>
-        <label htmlFor="entry"></label>
-        <Field
-          component={entryInput}
-          type="text"
-          name="text"
-          id="entry-text"
-          validate={[required, nonEmpty]}
-        />
-        <button
-          id="send-button"
-          disabled={this.props.pristine || this.props.submitting}
-        >
-          Send
-        </button>
-      </form>
+        {/* <p className="journal-question">
+          <i>Share your day below...</i>
+        </p> */}
+        <div className="field-wrapper">
+          <form
+            className="entry-form"
+            onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+          >
+            {error}
+            <label htmlFor="entry"></label>
+            <Field
+              component={entryInput}
+              type="text"
+              name="grateful-entry"
+              id="entry-text"
+              validate={[required, nonEmpty]}
+            />
+            <Field
+              component={entryInput}
+              type="text"
+              name="smile-entry"
+              id="entry-text"
+              validate={[required, nonEmpty]}
+            />
+            <Field
+              component={entryInput}
+              type="text"
+              name="free-entry"
+              id="entry-text"
+              validate={[required, nonEmpty]}
+            />
+            <button
+              id="send-button"
+              disabled={this.props.pristine || this.props.submitting}
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
     );
   }
 }

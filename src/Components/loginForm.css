@@ -4,10 +4,8 @@ body * {
 
 body {
   background-color: #1fcecb;
-  font-family: 'Roboto', helvetica, sans-serif;
   padding: 60px 0 0;
   margin: 0;
-  font-size: 18px;
 }
 
 .logo {
@@ -37,7 +35,10 @@ body {
 
 .form-input {
   margin: auto;
-  width: 300px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 input[type='name'],

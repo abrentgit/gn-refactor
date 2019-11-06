@@ -7,6 +7,40 @@
   margin: 30px auto 30px;
 }
 
+.field-wrapper {
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  height: 100vh;
+overflow: hidden;
+  padding-bottom: 200px;
+}
+
+.entry-form {
+  max-width: 400px;
+  font-family: 'Lato';
+  font-weight: 400;
+}
+
+.form-control {
+  max-width: 400px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  font: 300 60px 'Oswald', sans-serif;
+  letter-spacing: 6px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
 input[type='text'] {
   width: 100%;
   padding: 12px 20px;
@@ -117,7 +151,6 @@ textarea:hover::focus:-ms-placeholder {
 body {
   font-family: 'Lato', sans-serif;
   background: white;
-  color: #b3aca7;
 }
 
 header {
@@ -150,7 +183,7 @@ input {
 
   font-family: 'Lato', sans-serif;
   font-size: 0.875em;
-  color: #b3aca7;
+  /* color: #b3aca7; */
 
   outline: none;
   cursor: pointer;
