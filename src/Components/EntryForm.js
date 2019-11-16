@@ -28,9 +28,6 @@ export class EntryForm extends React.Component {
       <div className="form-wrapper">
         <h1 className="section-header">JOURNAL FORM</h1>
         <img className="logo" src="../ostrich.png" alt="ostrich" />
-        {/* <p className="journal-question">
-          <i>Share your day below...</i>
-        </p> */}
         <div className="field-wrapper">
           <form
             className="entry-form"
@@ -38,6 +35,9 @@ export class EntryForm extends React.Component {
           >
             {error}
             <label htmlFor="entry"></label>
+            <p className="grateful-question">
+              Name three things you're grateful for today?
+            </p>
             <Field
               component={entryInput}
               type="text"
@@ -45,17 +45,13 @@ export class EntryForm extends React.Component {
               id="entry-text"
               validate={[required, nonEmpty]}
             />
+            <p className="smile-question">
+              Name three things that made you smile today?
+            </p>
             <Field
               component={entryInput}
               type="text"
               name="smile-entry"
-              id="entry-text"
-              validate={[required, nonEmpty]}
-            />
-            <Field
-              component={entryInput}
-              type="text"
-              name="free-entry"
               id="entry-text"
               validate={[required, nonEmpty]}
             />
