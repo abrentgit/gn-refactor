@@ -36,25 +36,38 @@ export class EntryForm extends React.Component {
             {error}
             <label htmlFor="entry"></label>
             <p className="grateful-question">
-              Name three things you're grateful for today?
+              Name something you're grateful for today?
             </p>
             <Field
               component={entryInput}
               type="text"
-              name="grateful-entry"
+              name="user-entry"
               id="entry-text"
               validate={[required, nonEmpty]}
             />
-            <p className="smile-question">
-              Name three things that made you smile today?
+            <label htmlFor="entry"></label>
+            <p className="grateful-question">
+              Name something that made you smile today?
             </p>
             <Field
               component={entryInput}
               type="text"
-              name="smile-entry"
+              name="user-entry"
               id="entry-text"
               validate={[required, nonEmpty]}
             />
+            <label htmlFor="entry"></label>
+            <p className="grateful-question">
+              Describe a positive interaction you had today with someone?
+            </p>
+            <Field
+              component={entryInput}
+              type="text"
+              name="user-entry"
+              id="entry-text"
+              validate={[required, nonEmpty]}
+            />
+
             <button
               id="send-button"
               disabled={this.props.pristine || this.props.submitting}
