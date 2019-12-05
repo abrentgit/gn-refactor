@@ -36,17 +36,6 @@ export class EntryForm extends React.Component {
             {error}
             <label htmlFor="entry"></label>
             <p className="grateful-question">
-              Name something you're grateful for today?
-            </p>
-            <Field
-              component={entryInput}
-              type="text"
-              name="user-entry"
-              id="entry-text"
-              validate={[required, nonEmpty]}
-            />
-            <label htmlFor="entry"></label>
-            <p className="grateful-question">
               Name something that made you smile today?
             </p>
             <Field
@@ -58,7 +47,7 @@ export class EntryForm extends React.Component {
             />
             <label htmlFor="entry"></label>
             <p className="grateful-question">
-              Describe a positive interaction you had today with someone?
+              Name something you're grateful for today?
             </p>
             <Field
               component={entryInput}
@@ -67,7 +56,6 @@ export class EntryForm extends React.Component {
               id="entry-text"
               validate={[required, nonEmpty]}
             />
-
             <button
               id="send-button"
               disabled={this.props.pristine || this.props.submitting}
